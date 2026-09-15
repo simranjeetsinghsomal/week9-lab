@@ -1,0 +1,24 @@
+PASS NonMVC Calculator: 8 Add 3 => Result: 11
+PASS NonMVC Calculator: -5 Add 2 => Result: -3
+PASS NonMVC Calculator: abc Add 2 => Enter two whole numbers.
+PASS NonMVC Calculator:  Add 2 => Enter two whole numbers.
+PASS NonMVC Calculator: 2147483647 Add 1 => Result is too large.
+PASS MVC Calculator: 8 Add 3 => Result: 11
+PASS MVC Calculator: 8 Subtract 3 => Result: 5
+PASS MVC Calculator: 8 Multiply 3 => Result: 24
+PASS MVC Calculator: 8 Divide 2 => Result: 4
+PASS MVC Calculator: 7 Divide 2 => Result: 3.5
+PASS MVC Calculator: -5 Add 2 => Result: -3
+PASS MVC Calculator: 3 Subtract 8 => Result: -5
+PASS MVC Calculator: -5 Multiply 2 => Result: -10
+PASS MVC Calculator: -7 Divide 2 => Result: -3.5
+PASS MVC Calculator: 0 Divide 5 => Result: 0
+PASS MVC Calculator: 8 Divide 0 => Cannot divide by zero.
+PASS MVC Calculator: abc Add 2 => Enter two whole numbers.
+PASS MVC Calculator:  Subtract 2 => Enter two whole numbers.
+PASS MVC Calculator: 2.5 Multiply 2 => Enter two whole numbers.
+PASS MVC Calculator: 2147483647 Add 1 => Result is too large.
+PASS MVC Calculator: -2147483648 Subtract 1 => Result is too large.
+PASS MVC Calculator: 2147483647 Multiply 2 => Result is too large.
+PASS MVC Calculator: 4 Add 2 => Result: 6
+23 checks passed. Both forms were opened invisibly and their buttons were exercised with PerformClick.

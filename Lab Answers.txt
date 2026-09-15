@@ -1,0 +1,54 @@
+IT7742 Lab 7 - Model View Controller
+
+The supplied file is named IT7742 Lab6.docx, but its heading says Lab 7.
+
+Exercise 1
+NonMVC_Calculator has two text boxes, an Add button and a result label.
+The button event reads the inputs, adds the numbers and displays the answer.
+All of this is in CalculatorForm.cs.
+
+Exercise 2
+Code coupling: Input handling, calculation and output are in the same form.
+Changing the UI can mean changing the same code that does the calculation.
+Lack of reusability: Another screen cannot easily reuse the addition code
+because it is inside the button event.
+Maintenance: This is manageable with one button, but adding more calculations
+and validation would make the form longer and harder to follow.
+
+Exercises 3 and 4
+MVC_Calculator separates the work into three classes.
+CalculatorModel contains the calculations.
+CalculatorForm displays the controls and passes button clicks to the controller.
+CalculatorController reads the form inputs, checks them, calls the model and
+updates the result label. The form has no arithmetic in it.
+
+For example, clicking Add calls controller.Calculate("Add"). The controller
+reads Number1 and Number2, calls model.Add, then uses view.ShowResult.
+
+Activity 5
+Subtract, Multiply and Divide use the same arrangement as Add.
+Inputs are whole numbers. Division can give a decimal answer, so 7 / 2 is 3.5.
+Invalid inputs, division by zero and integer overflow show a message in the
+result label.
+
+Activity 6
+Separation of concerns makes it easier to see where each piece of code belongs.
+A calculation change goes in the model. A layout change goes in the form.
+This makes maintenance easier and gives a clearer way to add more operations.
+The model can also be reused without the form.
+
+The main refactoring issue is deciding where input checking should go.
+It belongs in the controller here, so the form stays focused on the controls.
+Another issue is integer division. Casting to double in Divide keeps the
+fractional part of the answer. MVC needs more files, which is extra work for
+a small calculator, but the responsibilities are clearer.
+
+Running the work
+Open Calculators.sln in Visual Studio with .NET desktop development and
+the .NET Framework 4.8 targeting pack. Set either project as the startup project.
+The controls are created in C# rather than a separate Designer file.
+You can also run the prebuilt EXE in each project's bin\Debug folder.
+To rebuild using Windows' framework compiler:
+powershell -ExecutionPolicy Bypass -File .\build.ps1
+
+Test results are in TestResults.txt.
